@@ -41,20 +41,27 @@ And for students to:
 ## Project Structure
 
 ```plaintext
-quiz-platform/
-│
-├── static/                 # CSS and static assets
-│
-├── templates/              # HTML templates
-│   ├── layout.html         # Base template
-│   ├── create.html         # Quiz creation
-│   ├── quiz.html           # Quiz page for students
-│   ├── dashboard.html      # Teacher's dashboard
-│   └── about.html          # About page
-│
-├── app.py                  # Main Flask app
-├── helpers.py              # Helper functions
-├── requirements.txt        # Dependencies
+quiz-platform/  
+│  
+├── static/                 # CSS and static assets (images, scripts)  
+│  
+├── templates/              # HTML templates  
+│   ├── about.html          # About page with developer info + LinkedIn badge  
+│   ├── answer.html         # Page showing the student's score/result after submission  
+│   ├── code.html           # Form page where student enters exam code to start quiz  
+│   ├── create.html         # Teacher quiz creation page (dynamic add questions)  
+│   ├── dashboard.html      # Teacher dashboard: table of students/scores/exams  
+│   ├── done.html           # Confirmation page showing generated exam code after create  
+│   ├── home.html           # Home / landing page  
+│   ├── layout.html         # Base template (navigation, flash/message area)  
+│   ├── login.html          # Login form  
+│   ├── quiz.html           # Quiz-taking page (renders questions and radio inputs)  
+│   ├── register.html       # Registration form for new users  
+│   └── test.html           # Optional: debug/test template used during development  
+│  
+├── app.py                  # Main Flask application (routes, DB usage)  
+├── helpers.py              # Helper functions (login_required, generate_exam_code, etc.)  
+├── requirements.txt        # Python dependencies  
 └── README.md               # Project documentation
 ```  
 ---
