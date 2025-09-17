@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Enter Code
+{% endblock %}
+
+{% block main %}
+
+<div class="form-container">
+    <h2>Start your exam</h2>
+
+    <div id="msg" class="message" style="display:none;"></div>
+
+    <form action="/code" method="post" class="ajaxForm">
+        <label for="username">Quiz's Code</label>
+        <input type="text" name="code" placeholder="Enter quiz's code">
+
+        <button type="submit">Enter</button>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Dashboard
+{% endblock %}
+
+
+{% block head %}
+<style>
+
+    body{
+        overflow-y: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+        font-size: 15px;
+        max-height: 400px;
+
+    }
+
+    thead {
+        background-color: #343a40;
+        color: white;
+        position: sticky;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 12px;
+        border: 1px solid #ddd;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #343a40;
+    }
+
+    tr:hover {
+        background-color: black;
+        transition: 0.3s;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        text-align: center;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+
+
+{% block j %}
+
+<p style="text-align:center; margin:20px 0; font-size:14px; color:#666;">
+    If you have issues or negative feedback, please keep it to yourself and use the Google Form instead.
+</p>
+
+
+
+{% endblock %}
+
+
+{% block main %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Exam Dashboard</h2>
+    <table class="table table-bordered table-striped text-center">
+        <thead class="table-dark">
+            <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Score</th>
+                <th>exam_title</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ row.student_name }}</td>
+                <td>{{ row.score }}/{{row.num}}</td>
+                <td>{{ row.exam_title }}</td>
+
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="3">No results found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

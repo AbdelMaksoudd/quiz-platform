@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .question-box {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        .question-box h3 {
+            margin: 0 0 15px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background: #28a745;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <h2>{{ exam["title"] }}</h2>
+    <p>{{ exam["description"] }}</p>
+
+    <form action="/quiz" method="post">
+        {% for q in questions %}
+        <div class="question-box">
+            <h3>Q{{ loop.index }}: {{ q["question"] }}</h3>
+
+            <label>
+                <input type="radio" name="answer_{{ q['id'] }}" value="a">
+                {{ q["option_a"] }}
+            </label>
+
+            <label>
+                <input type="radio" name="answer_{{ q['id'] }}" value="b">
+                {{ q["option_b"] }}
+            </label>
+
+            <label>
+                <input type="radio" name="answer_{{ q['id'] }}" value="c">
+                {{ q["option_c"] }}
+            </label>
+
+            <label>
+                <input type="radio" name="answer_{{ q['id'] }}" value="d">
+                {{ q["option_d"] }}
+            </label>
+        </div>
+        {% endfor %}
+
+        <button type="submit">Submit Quiz</button>
+    </form>
+</div>
+
+</body>
+</html>

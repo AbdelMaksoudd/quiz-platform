@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+
+
+{% block main %}
+
+
+
+<div class="form-container">
+    <h2>LOG IN</h2>
+
+    <div id="msg" class="message" style="display:none;"></div>
+
+    <form action="/login" method="post" class="ajaxForm">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Enter username">
+
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter password">
+        <button type="submit">Log In</button>
+    </form>
+</div>
+
+
+{% endblock %}

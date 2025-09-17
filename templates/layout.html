@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with-device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% block head %}{% endblock %}
+
+    </head>
+
+    <body>
+
+       <section class="header">
+           <nav>
+              <h1>Quiz.</h1>
+              {% block j %}{% endblock %}
+               <div class="nav-links" id="navlinks">
+                 <i class="fa fa-times" onclick="hideMenu()"></i>
+                 {% if session["user_id"] %}
+                   <ul>
+                       <li><a href="/">HOME</a></li>
+                       <li><a href="/About_Me">About Me</a></li>
+                       <li><a href="/code">ENTER CODE</a></li>
+                       <li><a href="/create">Create quiz</a></li>
+                       <li><a href="/dashboard">Dashboard</a></li>
+                       <li><a href="/logout">login out</a></li>
+                   </ul>
+                   {% else %}
+                    <ul>
+                       <li><a href="/">HOME</a></li>
+                       <li><a href="/About_Me">About Me</a></li>
+                       <li><a href="/code">ENTER CODE</a></li>
+                       <li><a href="/create">Create quiz</a></li>
+                       <li><a href="/login">LOGIN</a></li>
+                       <li><a href="/register">SIGN UP</a></li>
+                   </ul>
+                   {% endif %}
+
+               </div>
+             <i class="fa fa-bars" onclick="showMenu()"></i>
+           </nav>
+
+
+        <div id="message"></div>
+
+
+
+
+{% block main %}{% endblock %}
+
+
+
+
+<script>
+
+{% block script %}{% endblock %}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("form.ajaxForm").forEach(form => {
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            let formData = new FormData(this);
+            try {
+                let response = await fetch(this.action, {
+                    method: this.method,
+                    body: formData,
+                    credentials: 'same-origin',
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
+
+                const data = await response.json();
+
+                const msgBox = document.getElementById("message");
+                if (msgBox) {
+                    msgBox.style.display = "block";
+                    msgBox.innerText = data.message || "";
+                    msgBox.style.color = data.status === "error" ? "red" : "green";
+                }
+
+                if (data.status === "success") {
+                    setTimeout(() => {
+                        if (data.redirect) {
+                            window.location.href = data.redirect;
+                        } else {
+                            window.location.reload();
+                        }
+                    }, 600);
+                }
+
+            } catch (err) {
+                 this.submit();
+            }
+        });
+    });
+});
+
+
+</script>
+
+
+
+    </body>
+</html>

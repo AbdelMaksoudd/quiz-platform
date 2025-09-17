@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+
+
+<div class="form-container">
+    <h2>Register</h2>
+
+    <div id="msg" class="message" style="display:none;"></div>
+
+    <form action="/register" method="post" class="ajaxForm">
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="Enter username">
+
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter password">
+
+        <label for="confirmation">Confirm Password</label>
+        <input type="password" name="confirmation" placeholder="Confirm password">
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+
+{% endblock %}

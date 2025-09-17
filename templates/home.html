@@ -1,0 +1,30 @@
+       {% extends "layout.html" %}
+
+{% block title %}
+    QUIZ
+{% endblock %}
+
+{% block main %}
+
+           <div class="text-box">
+               <h1>Free online quiz maker</h1>
+               <p>Quickly and easily create interactive online quizzes for free!<br>try it now ↓</p>
+               <a href="/create" class="hero-btn">Create a quiz</a>
+           </div>
+
+
+<!-------JavaScript for toggle menu------->
+   <script>
+
+       var navlinks = document.getElementById("navlinks");
+       function showMenu(){
+           navlinks.style.right = "0";
+       }
+       function hideMenu(){
+           navlinks.style.right = "-200px";
+       }
+        </script>
+
+
+
+{% endblock %}
