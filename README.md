@@ -63,9 +63,11 @@ quiz-platform/
    cd quiz-platform
 
 3. Install dependencies:
+   
    pip install -r requirements.txt
 
 5. Run the Flask server:
+   
    flask run
 
 7. Open in your browser:
