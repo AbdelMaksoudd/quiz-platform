@@ -38,21 +38,25 @@ And for students to:
 ---
 
 ## 📂 Project Structure
+## Project Structure
+
+```plaintext
 quiz-platform/
 │
-├── static/             # CSS and static assets
-├── templates/          # HTML templates
-│   ├── layout.html     # Base template
-│   ├── create.html     # Quiz creation
-│   ├── quiz.html       # Quiz page for students
-│   ├── dashboard.html  # Teacher's dashboard
-│   └── about.html      # About page
+├── static/                 # CSS and static assets
 │
-├── app.py              # Main Flask app
-├── helpers.py          # Helper functions
-├── requirements.txt    # Dependencies
-└── README.md           # Project documentation
-
+├── templates/              # HTML templates
+│   ├── layout.html         # Base template
+│   ├── create.html         # Quiz creation
+│   ├── quiz.html           # Quiz page for students
+│   ├── dashboard.html      # Teacher's dashboard
+│   └── about.html          # About page
+│
+├── app.py                  # Main Flask app
+├── helpers.py              # Helper functions
+├── requirements.txt        # Dependencies
+└── README.md               # Project documentation
+```  
 ---
 
 ## ⚡ Installation & Usage
