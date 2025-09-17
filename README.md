@@ -57,7 +57,7 @@ quiz-platform/
 
 ## ⚡ Installation & Usage
 1. Clone the repository:
-   git clone https://github.com/your-username/quiz-platform.git
+   git clone https://github.com/AbdelMaksoudd/quiz-platform.git
    cd quiz-platform
 
 2. Install dependencies:
