@@ -57,16 +57,20 @@ quiz-platform/
 
 ## ⚡ Installation & Usage
 1. Clone the repository:
+   
    git clone https://github.com/AbdelMaksoudd/quiz-platform.git
    cd quiz-platform
 
-2. Install dependencies:
+3. Install dependencies:
+   
    pip install -r requirements.txt
 
-3. Run the Flask server:
+5. Run the Flask server:
+   
    flask run
 
-4. Open in your browser:
+7. Open in your browser:
+   
    http://127.0.0.1:5000/
 
 ---
