@@ -59,14 +59,13 @@ quiz-platform/
 1. Clone the repository:
    
    git clone https://github.com/AbdelMaksoudd/quiz-platform.git
+   
    cd quiz-platform
 
 3. Install dependencies:
-   
    pip install -r requirements.txt
 
 5. Run the Flask server:
-   
    flask run
 
 7. Open in your browser:
