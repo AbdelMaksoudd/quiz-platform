@@ -1,7 +1,7 @@
 # 📘 Quiz Platform
 
 ### 🎥 Video Demo  
-[▶️ Watch Demo](https://youtu.be/UFBJRtFtJE8?si=1k56uoiGXPzyB_Ft)
+[▶️ Watch Demo](https://youtu.be/c2fNxOZYqSU)
 
 ---
 
